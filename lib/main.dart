@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:buleprint_frame/common/index.dart';
 import 'package:buleprint_frame/common/services/config.dart';
 import 'package:buleprint_frame/global.dart';
+import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,33 +18,41 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return AdaptiveTheme(
-      // 主题样式
-      light: AppTheme.light, // 亮色主题
-      dark: AppTheme.dark, // 暗色主题
-      initial: ConfigService.to.themeMode, // 初始主题
-      debugShowFloatingThemeButton: true, // 显示主题按钮 调试用
+    return ScreenUtilInit(
+      // 按比例适配屏幕
+      designSize: const Size(375, 812), // 设计稿中设备的尺寸(单位随意,建议dp,但在使用过程中必须保持一致)
+      splitScreenMode: false, // 支持分屏尺寸
+      minTextAdapt: false, // 是否根据宽度/高度中的最小值适配文字
 
       // 构建
-      builder: (theme, darkTheme) => GetMaterialApp(
-        title: 'Flutter Demo',
-        // 主题
-        theme: theme,
-        darkTheme: darkTheme,
+      builder: (context, child) => AdaptiveTheme(
+        // 主题样式
+        light: AppTheme.light, // 亮色主题
+        dark: AppTheme.dark, // 暗色主题
+        initial: ConfigService.to.themeMode, // 初始主题
+        debugShowFloatingThemeButton: true, // 显示主题按钮 调试用
 
-        // 初始路由
-        initialRoute: RouteNames.systemSplash,
-        // 路由列表
-        getPages: RoutePages.list,
-        //监听导航行为
-        navigatorObservers: [RoutePages.observer],
+        // 构建
+        builder: (theme, darkTheme) => GetMaterialApp(
+          title: 'Flutter Demo',
+          // 主题
+          theme: theme,
+          darkTheme: darkTheme,
 
-        // 多语言
-        translations: Translation(), // 词典
-        localizationsDelegates: Translation.localizationsDelegates, // 代理
-        supportedLocales: Translation.supportedLocales, // 支持的语言种类
-        locale: ConfigService.to.locale, // 当前语言种类
-        fallbackLocale: Translation.fallbackLocale, // 默认语言种类
+          // 初始路由
+          initialRoute: RouteNames.systemSplash,
+          // 路由列表
+          getPages: RoutePages.list,
+          //监听导航行为
+          navigatorObservers: [RoutePages.observer],
+
+          // 多语言
+          translations: Translation(), // 词典
+          localizationsDelegates: Translation.localizationsDelegates, // 代理
+          supportedLocales: Translation.supportedLocales, // 支持的语言种类
+          locale: ConfigService.to.locale, // 当前语言种类
+          fallbackLocale: Translation.fallbackLocale, // 默认语言种类
+        ),
       ),
     );
   }
