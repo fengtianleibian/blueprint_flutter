@@ -27,3 +27,6 @@ flutter config --jdk-dir /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/H
     - https://material-foundation.github.io/material-theme-builder/  //下载颜色配置
     - adaptive_theme 主题功能切换插件
         - flutter pub add adaptive_theme 
+
+7. 字体封装
+    - https://fonts.google.com/ google 字体

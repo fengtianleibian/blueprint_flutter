@@ -59,7 +59,8 @@ class AppTheme {
   static ThemeData _getTheme(ColorScheme scheme) {
     return ThemeData(
       useMaterial3: false,
-      colorScheme: scheme,
+      colorScheme: scheme, // 主题
+      fontFamily: "Roboto", // 字体
     );
   }
 }
