@@ -45,4 +45,6 @@ flutter config --jdk-dir /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/H
 
 9. 图片组件插件 flutter: pub add cached_network_image flutter_svg    
 
-10. 图标组件插件 flutter_svg: 
+10. 图标组件插件 flutter_svg: flutter pub add flutter_svg
+
+11. 按钮组件插件 ducafe_ui_core: flutter pub add ducafe_ui_core
