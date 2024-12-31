@@ -56,7 +56,11 @@ dependencies:
 
   #主题
   adaptive_theme: ^3.6.0
+
+  #图片
   cached_network_image: ^3.4.1
+
+  #图标
   flutter_svg: ^2.0.16
 
 
