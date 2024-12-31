@@ -1,3 +1,4 @@
+import 'package:buleprint_frame/common/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,8 +9,9 @@ class SplashPage extends GetView<SplashController> {
 
   // 主视图
   Widget _buildView() {
-    return const Center(
-      child: Text("SplashPage"),
+    return const ImageWidget.img(
+      AssetsImages.splashJpg,
+      fit: BoxFit.fill,
     );
   }
 
@@ -19,12 +21,7 @@ class SplashPage extends GetView<SplashController> {
       init: SplashController(),
       id: "splash",
       builder: (_) {
-        return Scaffold(
-          appBar: AppBar(title: const Text("splash")),
-          body: SafeArea(
-            child: _buildView(),
-          ),
-        );
+        return _buildView();
       },
     );
   }
