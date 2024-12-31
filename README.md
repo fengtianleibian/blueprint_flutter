@@ -1,0 +1,24 @@
+1. flutter pub add get //getX 插件
+2. flutter pub add package_info_plus //获取包信息
+3. flutter pub add shared_preferences //本地存储
+
+语言代码
+https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+国家代码
+https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+
+//解决 Translations 插件不兼容问题
+flutter config --jdk-dir /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+
+4. flutter pub add dio //数据拉取
+
+5. 改程序名、包名
+    - flutter pub global activate rename
+    - flutter pub global run rename setBundleId --value com.blueprint
+    - flutter pub global run rename setAppName --value 蓝图
+    - https://www.canva.com/logos/templates/  //图标设计
+    - https://icon.kitchen/  //图标工具
+    - flutter pub add icons_launcher -d 图标加工插件 -d 开发环境依赖
+    // 打包图片
+    - flutter pub get
+    - dart run icons_launcher:create
