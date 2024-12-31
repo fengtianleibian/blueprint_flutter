@@ -30,3 +30,15 @@ flutter config --jdk-dir /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/H
 
 7. 字体封装
     - https://fonts.google.com/ google 字体
+
+8. 核心插件 ducafe_ui_core
+    - flutter pub add ducafe_ui_core
+    - 功能:
+        - 屏幕适配工具 （ScreenUtil）
+        - Widget 扩展方法
+        - 上下文 （Context） 扩展方法
+        - 字符串扩展方法
+        - 列表扩展方法
+        - 主题访问扩展方法
+        - 平台判断扩展方法
+        - UI 工具类   

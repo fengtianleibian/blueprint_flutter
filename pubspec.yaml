@@ -39,6 +39,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
+  #界面核心包
+  ducafe_ui_core: ^1.0.6
+
   #getx 插件
   get: ^4.6.6
 
@@ -53,6 +56,7 @@ dependencies:
 
   #主题
   adaptive_theme: ^3.6.0
+
 
 dev_dependencies:
   flutter_test:
