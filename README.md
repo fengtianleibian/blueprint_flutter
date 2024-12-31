@@ -48,3 +48,7 @@ flutter config --jdk-dir /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/H
 10. 图标组件插件 flutter_svg: flutter pub add flutter_svg
 
 11. 按钮组件插件 ducafe_ui_core: flutter pub add ducafe_ui_core
+
+12. native 启动图 : 
+    - flutter pub add flutter_native_splash -d
+    - dart run flutter_native_splash:create // 修改后执行操作
