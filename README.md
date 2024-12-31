@@ -22,3 +22,8 @@ flutter config --jdk-dir /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/H
     // 打包图片
     - flutter pub get
     - dart run icons_launcher:create
+
+6. 主题配置 （明亮、黑暗）
+    - https://material-foundation.github.io/material-theme-builder/  //下载颜色配置
+    - adaptive_theme 主题功能切换插件
+        - flutter pub add adaptive_theme 
