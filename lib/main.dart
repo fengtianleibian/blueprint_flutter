@@ -4,6 +4,7 @@ import 'package:buleprint_frame/common/services/config.dart';
 import 'package:buleprint_frame/global.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       // 按比例适配屏幕
       designSize: const Size(375, 812), // 设计稿中设备的尺寸(单位随意,建议dp,但在使用过程中必须保持一致)
-      splitScreenMode: false, // 支持分屏尺寸
+      splitScreenMode: false, // 支持分屏尺寸s
       minTextAdapt: false, // 是否根据宽度/高度中的最小值适配文字
 
       // 构建
@@ -52,6 +53,19 @@ class MyApp extends StatelessWidget {
           supportedLocales: Translation.supportedLocales, // 支持的语言种类
           locale: ConfigService.to.locale, // 当前语言种类
           fallbackLocale: Translation.fallbackLocale, // 默认语言种类
+
+          // builder
+          builder: (context, widget) {
+            // EasyLoading 初始化
+            widget = EasyLoading.init()(context, widget);
+
+            // 不随系统字体缩放比例
+            return MediaQuery(
+              data: MediaQuery.of(context)
+                  .copyWith(textScaler: const TextScaler.linear(1.0)),
+              child: widget,
+            );
+          },
         ),
       ),
     );

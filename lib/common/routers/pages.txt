@@ -1,5 +1,13 @@
 
       GetPage(
+        name: RouteNames.stylesInput,
+        page: () => const InputPage(),
+      ),
+      GetPage(
+        name: RouteNames.stylesStylesIndex,
+        page: () => const StylesIndexPage(),
+      ),
+      GetPage(
         name: RouteNames.systemLogin,
         page: () => const LoginPage(),
       ),
@@ -8,6 +16,18 @@
         page: () => const MainPage(),
       ),
       GetPage(
+        name: RouteNames.systemRegister,
+        page: () => const RegisterPage(),
+      ),
+      GetPage(
+        name: RouteNames.systemRegisterPin,
+        page: () => const RegisterPinPage(),
+      ),
+      GetPage(
         name: RouteNames.systemSplash,
         page: () => const SplashPage(),
+      ),
+      GetPage(
+        name: RouteNames.systemWelcome,
+        page: () => const WelcomePage(),
       ),

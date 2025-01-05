@@ -8,11 +8,18 @@ class Constants {
   ///
   /// 存储应用的基础 API 地址。
   /// 用于网络请求时的统一入口。
-  static const baseApiUrl = 'https://api.example.com';
+  static const baseApiUrl = 'https://wpapi.ducafecat.tech';
 
   /// 本地存储的语言代码键名
   ///
   /// 用于保存用户选择的语言代码（如 `en` 或 `zh`）。
   /// 常用于多语言设置和存储。
   static const storageLanguageCode = 'language_code';
+
+  /// App首次打开
+  static const storageAlreadyOpen = 'already_open';
+
+  // AES
+  static const aesKey = 'aH5aH5bG0dC6aA3oN0cK4aU5jU6aK2lN';
+  static const aesIV = 'hK6eB4aE1aF3gH5q';
 }

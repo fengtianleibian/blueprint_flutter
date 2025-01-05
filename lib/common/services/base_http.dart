@@ -144,23 +144,57 @@ class RequestInterceptors extends Interceptor {
   @override
   Future<void> onError(
       DioException err, ErrorInterceptorHandler handler) async {
+    // 将 Dio 的错误信息封装为自定义 HttpException
     final exception = HttpException(err.message ?? "error message");
+    // 根据错误类型处理
     switch (err.type) {
       case DioExceptionType.badResponse: // 服务端自定义错误体处理
+        {
+          // 解析服务端返回的错误信息
+          final response = err.response;
+          final errorMessage = ErrorMessageModel.fromJson(response?.data);
+          // 根据错误码进行处理
+          switch (errorMessage.statusCode) {
+            // 401 未登录
+            case 401:
+              // 注销 并跳转到登录页面
+              _errorNoAuthLogout();
+              break;
+            case 404:
+              break;
+            case 400:
+              break;
+            case 500:
+              break;
+            case 502:
+              break;
+            default:
+              break;
+          }
+          Loading.error(errorMessage.message);
+        }
         break;
-      case DioExceptionType.unknown: // 处理未知错误
+      case DioExceptionType.unknown:
         break;
-      case DioExceptionType.cancel: // 处理请求取消
+      case DioExceptionType.cancel:
         break;
-      case DioExceptionType.connectionTimeout: // 处理连接超时
+      case DioExceptionType.connectionTimeout:
         break;
       default:
         break;
     }
-    // 包装错误信息
+    //将自定义的 HttpException 包装进 error 字段
     DioException errNext = err.copyWith(
       error: exception,
     );
-    handler.next(errNext); // 继续错误处理
+
+    // 传递错误到下一个拦截器或返回给调用方
+    handler.next(errNext);
+  }
+
+  // 退出并重新登录
+  Future<void> _errorNoAuthLogout() async {
+    // await UserService.to.logout();
+    Get.toNamed(RouteNames.systemLogin);
   }
 }

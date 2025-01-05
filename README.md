@@ -54,3 +54,11 @@ flutter config --jdk-dir /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/H
     - dart run flutter_native_splash:create // 修改后执行操作
 
 13. 轮播图组件: flutter pub add carousel_slider
+
+14. 表单验证: flutter pub add form_validator
+
+15. 验证码输入框: flutter pub add pinput
+
+16. 加载动画: flutter pub add flutter_easyloading
+
+17. 加密: flutter pub add encrypt
